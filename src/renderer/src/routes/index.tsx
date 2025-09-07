@@ -1,11 +1,16 @@
-import Versions from './components/Versions'
-import electronLogo from './assets/electron.svg'
+import { createFileRoute } from '@tanstack/react-router'
 
-function App(): React.JSX.Element {
+export const Route = createFileRoute('/')({
+  component: Index
+})
+
+import electronLogo from '../assets/electron.svg'
+
+function Index(): React.JSX.Element {
   const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
 
   return (
-    <div className="flex min-h-dvh select-none flex-col justify-center items-center bg-sky-50">
+    <div className="flex grow select-none flex-col justify-center items-center bg-sky-50">
       <img alt="logo" className="size-32" src={electronLogo} />
       <div className="mt-2 text-sm bg-sky-400 text-sky-50 px-4 py-1 rounded-full">
         Powered by electron-vite
@@ -45,9 +50,6 @@ function App(): React.JSX.Element {
           </a>
         </div>
       </div>
-      <Versions></Versions>
     </div>
   )
 }
-
-export default App
