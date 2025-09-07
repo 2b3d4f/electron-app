@@ -1,7 +1,7 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
-import '../assets/style.css'
+import '../assets/app.css'
 
 const RootLayout = (): React.JSX.Element => (
   <>
